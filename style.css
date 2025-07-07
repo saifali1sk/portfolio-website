@@ -1,126 +1,105 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg: #f9f9f9;
+  --text: #222;
+  --accent: #007acc;
+  --card-bg: #fff;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  background: #f9f9f9;
-  color: #333;
 }
 
-header {
-  background: #222;
+.navbar {
+  background: #111;
   color: white;
   padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav h1 {
-  font-size: 1.5rem;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-nav a {
+.navbar a {
   color: white;
+  margin-left: 1rem;
   text-decoration: none;
 }
 
-#menu-toggle {
-  display: none;
-  cursor: pointer;
+.hero {
+  background: var(--accent);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
 }
 
-main {
+.section {
   padding: 2rem;
+  max-width: 900px;
+  margin: auto;
 }
 
-section {
-  margin-bottom: 3rem;
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
 }
 
-h2 {
-  margin-bottom: 1rem;
-  color: #444;
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-ul {
-  list-style-type: square;
-  padding-left: 1.5rem;
-}
-
-.project {
-  margin-bottom: 1rem;
+.project-card {
+  flex: 1 1 250px;
+  background: var(--card-bg);
   padding: 1rem;
-  background: white;
-  border: 1px solid #ddd;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
+  gap: 0.5rem;
 }
 
-input, textarea, button {
+input, textarea {
   padding: 0.5rem;
-  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 button {
-  background: #0077cc;
+  background: var(--accent);
   color: white;
   border: none;
+  padding: 0.7rem;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-button:hover {
-  background: #005fa3;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: #222;
-  color: white;
+  background: #eee;
   margin-top: 2rem;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background: #333;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 150px;
-    padding: 1rem;
-  }
-
-  nav ul.show {
+@media (max-width: 600px) {
+  .navbar nav {
     display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  #menu-toggle {
-    display: block;
+  .projects {
+    flex-direction: column;
   }
 }
