@@ -1,105 +1,148 @@
 :root {
-  --bg: #f9f9f9;
-  --text: #222;
-  --accent: #007acc;
-  --card-bg: #fff;
+  --primary: #007acc;
+  --dark: #1e1e1e;
+  --light: #f9f9f9;
+  --text: #333;
 }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bg);
+  background-color: var(--light);
   color: var(--text);
   line-height: 1.6;
 }
 
-.navbar {
-  background: #111;
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+header {
+  background: var(--dark);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
+}
+
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar a {
-  color: white;
-  margin-left: 1rem;
-  text-decoration: none;
+.logo {
+  margin: 0;
+  font-size: 1.8rem;
 }
 
-.hero {
-  background: var(--accent);
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu li a {
   color: white;
-  padding: 3rem 2rem;
-  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.menu li a:hover {
+  color: var(--primary);
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
+  padding: 2rem 0;
 }
 
-.skills {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
 
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+.project-cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-.project-card {
-  flex: 1 1 250px;
-  background: var(--card-bg);
-  padding: 1rem;
+.card {
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 input, textarea {
   padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
-button {
-  background: var(--accent);
+button[type="submit"] {
+  background: var(--primary);
   color: white;
   border: none;
-  padding: 0.7rem;
-  border-radius: 5px;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #005fa3;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
   background: #eee;
   margin-top: 2rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .navbar nav {
-    display: flex;
+/* Mobile */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
     flex-direction: column;
-    gap: 0.5rem;
+    background: var(--dark);
+    position: absolute;
+    right: 1rem;
+    top: 70px;
+    padding: 1rem;
+    border-radius: 6px;
   }
 
-  .projects {
-    flex-direction: column;
+  .menu.show {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: inline;
   }
 }
