@@ -2,71 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saif Ali | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saif Ali | Web Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <header class="navbar">
+    <h1>Saif Ali</h1>
     <nav>
-      <h1>Saif Ali</h1>
-      <ul id="menu">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div id="menu-toggle">☰</div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button onclick="toggleTheme()">🌓</button>
     </nav>
   </header>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Hello! I'm <strong>Saif Ali</strong>, a self-employed freelancer and resident of Malta. I hold a Master's degree in Computer Science (MCS) and specialize in web design and development. I love building clean, functional, and user-friendly websites.</p>
-    </section>
+  <section class="hero">
+    <h2>👋 Hello, I'm Saif Ali</h2>
+    <p>A web designer & developer based in Malta. I build modern, responsive, and user-friendly websites.</p>
+  </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML & CSS</li>
-        <li>JavaScript & React</li>
-        <li>WordPress & WooCommerce</li>
-        <li>Figma & UI/UX Design</li>
-      </ul>
-    </section>
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I’m a self-employed freelancer with a Master’s in Computer Science (MCS). I specialize in web design & development using modern tools and frameworks.</p>
+  </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>HTML5 & CSS3</li>
+      <li>JavaScript & React</li>
+      <li>WordPress & WooCommerce</li>
+      <li>Figma & UI/UX Design</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
         <h3>Web Camel</h3>
-        <p>Business website for IT consultancy in Dubai with modern UI and SEO-friendly design.</p>
+        <p>Business site for Dubai-based IT consultancy with modern UI and SEO optimization.</p>
       </div>
-      <div class="project">
+      <div class="project-card">
         <h3>Pet Supplies E-Commerce</h3>
-        <p>Shopify-powered store with product videos, custom theme, and Instagram integration.</p>
+        <p>Custom Shopify theme with Instagram feed, product videos, and secure checkout integration.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Send</button>
-      </form>
-    </section>
-  </main>
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required/>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required/>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Saif Ali. All rights reserved.</p>
+    <p>© 2025 Saif Ali — All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
