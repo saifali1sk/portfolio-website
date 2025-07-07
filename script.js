@@ -1,18 +1,13 @@
-const toggleBtn = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
-
-toggleBtn.addEventListener("click", () => {
-  menu.classList.toggle("show");
-});
-
-// Optional: Form validation (simple)
-document.querySelector("form").addEventListener("submit", function (e) {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-
-  if (!name || !email || !message) {
-    e.preventDefault();
-    alert("Please fill in all fields before submitting.");
+function toggleTheme() {
+  const root = document.documentElement;
+  if (root.style.getPropertyValue('--bg') === '#f9f9f9') {
+    root.style.setProperty('--bg', '#1e1e1e');
+    root.style.setProperty('--text', '#f1f1f1');
+    root.style.setProperty('--card-bg', '#2c2c2c');
+  } else {
+    root.style.setProperty('--bg', '#f9f9f9');
+    root.style.setProperty('--text', '#222');
+    root.style.setProperty('--card-bg', '#fff');
   }
-});
+}
+
